@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Words</title>
+    <link rel="stylesheet" type="text/css" href="css/board.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="lvl-dnd.js"></script>
+    <script src="lvl-uuid.js"></script>
+</head>
+<body ng-app="JSWordsApp">
+    <div id="jswords" ng-controller="JSWordsController">
+      {{name}}
+    <div class="board" >
+        <div class="row">
+            <div class="slot tripleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleWord"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"> </div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot tripleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot centerStar"><div class="star"></div></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleWord"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleWord"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="row">
+            <div class="slot tripleWord" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)"></div>
+            <div class="slot" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleWord"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot doubleLetter"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot tripleWord"></div>
+        </div>
+    </div>
+      <div class="lettersBucket">
+        <div class="letter" x-lvl-draggable="true">A</div>
+        <div class="letter" x-lvl-draggable="true">B</div>
+        <div class="letter" x-lvl-draggable="true">C</div>
+        <div class="letter" x-lvl-draggable="true">D</div>  
+        <div class="letter" x-lvl-draggable="true">F</div>  
+      </div>
+    </div>
+    <style>
+        .lvl-over {
+				/* applied to a drop target when a draggable object is over it */
+				border: 2px dashed black !important;
+			}
+
+			.lvl-target {
+				/* 
+				applied to all drop targets when a drag operation begins 
+				removed when the drag operation ends
+				used to indicate drop targets on a page 
+				*/
+				background-color: #ddd;
+				opacity: .5;
+			}
+
+			[draggable] {
+				/* not applied by the directive, but useful to indicate a draggable element */
+				-moz-user-select: none;
+				-khtml-user-select: none;
+				-webkit-user-select: none;
+				user-select: none;
+				cursor: move;
+				border:1px solid black;
+			}
+    </style>
+    <script type="application/javascript">
+        var JSWordsApp = angular.module('JSWordsApp', ['lvl.directives.dragdrop']);
+        
+			JSWordsApp.controller('JSWordsController',function JSWordsController($scope){
+                $scope.name = "weird";
+				$scope.dropped = function(dragEl, dropEl) { 
+                    // function referenced by the drop target
+					//this is application logic, for the demo we just want to color the grid squares
+					//the directive provides a native dom object, wrap with jqlite
+					var drop = angular.element(dropEl);
+					var drag = angular.element(dragEl);
+				
+					//clear the previously applied color, if it exists
+					var bgClass = drop.attr('data-color');
+					if (bgClass) {
+						drop.removeClass(bgClass);
+					}
+
+					//add the dragged color
+					bgClass = drag.attr("data-color");
+					drop.addClass(bgClass);
+					drop.attr('data-color', bgClass);
+
+					//if element has been dragged from the grid, clear dragged color
+					if (drag.attr("x-lvl-drop-target")) {
+						drag.removeClass(bgClass);
+					}
+				}
+			});
+		
+    </script>
+</body>
+</html>

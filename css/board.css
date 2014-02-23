@@ -1,0 +1,167 @@
+.board {
+    overflow: hidden;
+    border-top: 1px solid #a8a8a8;
+    border-right: 1px solid black;
+    width: 615px;
+    height: 615px;
+}
+
+.board .row {
+    overflow: hidden;
+    font-family: sans-serif;
+    text-align: center;
+    clear: both;
+}
+
+.board .row .slot {
+    width:40px;
+    padding-top: 10px;
+    height:30px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    background: white;
+    border-bottom: 1px solid #a8a8a8;
+    border-left: 1px solid #a8a8a8;
+}
+
+.board .row .slot.tripleWord {
+    background: #ffbd0b;
+    color:white;
+}
+
+.board .row .slot.tripleWord:before {
+    content: 'TW';
+}
+        
+.board .row .slot.doubleWord {
+    background: #0b1b96;
+    color:white;
+}
+        
+.board .row .slot.doubleWord:before {
+    content: 'DW';
+}
+
+.board .row .slot.doubleLetter {
+    background: #e51bb6;
+    color:white;
+    text-align: center;            
+}
+        
+.board .row .slot.doubleLetter:before {
+    content: 'DL'
+}
+        
+.board .row .slot.tripleLetter {
+    background: #1be523;
+    color:white;
+}
+        
+.board .row .slot.tripleLetter:before {
+    content: 'TL';
+}
+
+.board .row .slot.centerStar{
+    background: red;
+}
+        
+.board .row .slot.centerStar .star {
+   margin: 4px 3px;
+   position: relative;
+   display: block;
+   color: red;
+   width: 0px;
+   height: 0px;
+   border-right:  25px solid transparent;
+   border-bottom: 13px  solid white;
+   border-left:   13px solid transparent;
+   -moz-transform:    rotate(35deg);
+   -webkit-transform: rotate(35deg);
+   -ms-transform:     rotate(35deg);
+   -o-transform:      rotate(35deg);
+}
+
+.board .row .slot.centerStar .star:before {
+    border-bottom: 20px solid white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -10px;
+    left: -8px;
+    display: block;
+    content: '';
+    -webkit-transform: rotate(-35deg);
+    -moz-transform:    rotate(-35deg);
+    -ms-transform:     rotate(-35deg);
+    -o-transform:      rotate(-35deg);
+}
+
+.board .row .slot.centerStar .star:after {
+    position: absolute;
+    display: block;
+    color: red;
+    top: 0px;
+    left: -15px;
+    width: 0px;
+    height: 0px;
+    border-right: 19px solid transparent;
+    border-bottom: 13px solid white;
+    border-left: 19px solid transparent;
+    -webkit-transform: rotate(-78deg);
+    -moz-transform:    rotate(-70deg);
+    -ms-transform:     rotate(-70deg);
+    -o-transform:      rotate(-70deg);
+    content: '';
+ }
+
+
+.lettersBucket {
+    clear: both;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.lettersBucket .letter {
+    margin-left:10px;
+    width:40px;
+    height:40px;
+    float: left;
+    background: #e56464;
+    font-family: sans-serif;
+    color: white;
+    -moz-box-shadow: -1px 3px 7px 1px #bababa;
+    -webkit-box-shadow: -1px 3px 7px 1px #bababa;
+    box-shadow: -1px 3px 7px 1px #bababa;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff9412), color-stop(1, #f0bc7d) );
+    background:-moz-linear-gradient( center top, #ff9412 5%, #f0bc7d 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9412', endColorstr='#f0bc7d');
+    background-color:#ff9412;
+    -webkit-border-top-left-radius:1px;
+    -moz-border-radius-topleft:1px;
+    border-top-left-radius:1px;
+    -webkit-border-top-right-radius:1px;
+    -moz-border-radius-topright:1px;
+    border-top-right-radius:1px;
+    -webkit-border-bottom-right-radius:1px;
+    -moz-border-radius-bottomright:1px;
+    border-bottom-right-radius:1px;
+    -webkit-border-bottom-left-radius:1px;
+    -moz-border-radius-bottomleft:1px;
+    border-bottom-left-radius:1px;
+    text-indent:0;
+    border:1px solid #bab2a3;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:28px;
+    font-weight:bold;
+    font-style:normal;
+    line-height:40px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #9e8051;
+}
+        
