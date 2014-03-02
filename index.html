@@ -7,8 +7,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
     <script src="js/controllers/angular-dnd.js"></script>
-    <script src="js/directives/lvl-dnd.js"></script>
-    <script src="js/directives/lvl-uuid.js"></script>
+    <script src="js/services/lvl-dnd.js"></script>
+    <script src="js/services/lvl-uuid.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body ng-app="JSWordsApp">
@@ -254,7 +254,7 @@
             <div x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" class="slot"></div>
         </div>
         <div class="row">
-            <div x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" class="slot tripleWord" ></div>
+            <div id="autogen" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" class="slot tripleWord" ></div>
             <div x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" class="slot" ></div>
             <div x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" class="slot" ></div>
             <div x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" class="slot doubleLetter" ></div>
@@ -272,7 +272,7 @@
         </div>
     </div>
       <div class="lettersBucket">
-        <div class="letter" x-lvl-draggable="true">A</div>
+        <div class="letter" x-lvl-draggable="true" id="letterA">A</div>
         <div class="letter" x-lvl-draggable="true">B</div>
         <div class="letter" x-lvl-draggable="true">C</div>
         <div class="letter" x-lvl-draggable="true">D</div>  

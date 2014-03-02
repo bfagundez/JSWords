@@ -4,6 +4,8 @@ JSWordsApp.controller('JSWordsController', function JSWordsController($scope) {
     'use strict';
     $scope.name = "JSWords";
     $scope.dropped = function (dragEl, dropEl) {
+
+        console.log(dragEl, dropEl);
         // function referenced by the drop target
         //this is application logic, for the demo we just want to color the grid squares
         //the directive provides a native dom object, wrap with jqlite

@@ -13,7 +13,11 @@ module.directive('lvlDraggable', ['$rootScope', 'uuid', function($rootScope, uui
 	            }
 	            
 	            el.bind("dragstart", function(e) {
-	                e.dataTransfer.setData('text', id);
+	            	//console.log('dk what this is trying',e.dataTransfer);
+	            	if(e.dataTransfer){
+	            		e.dataTransfer.setData('text', id);	
+	            	}
+	                
 
 	                $rootScope.$emit("LVL-DRAG-START");
 	            });
@@ -42,8 +46,11 @@ module.directive('lvlDropTarget', ['$rootScope', 'uuid', function($rootScope, uu
 	              if (e.preventDefault) {
 	                e.preventDefault(); // Necessary. Allows us to drop.
 	              }
+
+	              if(e.dataTransfer){
+	              	e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.	
+	              }
 	              
-	              e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
 	              return false;
 	            });
 	            
@@ -57,6 +64,7 @@ module.directive('lvlDropTarget', ['$rootScope', 'uuid', function($rootScope, uu
 	            });
 	            
 	            el.bind("drop", function(e) {
+	              console.log('dropping element',e,e.dataTransfer);
 	              if (e.preventDefault) {
 	                e.preventDefault(); // Necessary. Allows us to drop.
 	              }
@@ -64,11 +72,15 @@ module.directive('lvlDropTarget', ['$rootScope', 'uuid', function($rootScope, uu
 	              if (e.stopPropogation) {
 	                e.stopPropogation(); // Necessary. Allows us to drop.
 	              }
-	            	var data = e.dataTransfer.getData("text");
+	              if(e.dataTransfer){
+
+	              	var data = e.dataTransfer.getData("text");
 	                var dest = document.getElementById(id);
 	                var src = document.getElementById(data);
 	                
 	                scope.onDrop({dragEl: src, dropEl: dest});
+	              }
+	            	
 	            });
 
 	            $rootScope.$on("LVL-DRAG-START", function() {
